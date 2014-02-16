@@ -1,0 +1,63 @@
+body { padding-top: 70px; }
+
+.row .user {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+#item-form {
+    margin-bottom: 50px;
+}
+
+ul { 
+    margin: 0; 
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+li.item .actions i {
+    cursor: pointer;
+}
+
+li.item {
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+li.item .likes, li.item .comments {
+    font-size: .9em;
+    /* padding: 3px 10px; */
+    border-bottom: 1px solid #fff;
+}
+
+li.item .likes {
+    color: #bbb;
+    /* background: #edeff4; */
+}
+
+li.item .comments {
+    background: #edeff4;
+}
+
+.edit-in-place span {
+    cursor: pointer;
+}
+
+.edit-in-place input {
+    display: none;
+}
+
+.edit-in-place.active span {
+  display: none;
+}
+
+.edit-in-place.active input {
+  display: inline-block;
+}
+
+.edit-in-place form {
+    display: inline;
+}

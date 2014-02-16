@@ -1,0 +1,46 @@
+{
+  "From": "tzangms@gmail.com",
+  "FromFull": {
+    "Email": "tzangms@gmail.com",
+    "Name": "Postmarkapp Support"
+  },
+  "To": "\"Firstname Lastname\" <mailbox+hash@inbound.postmarkapp.com>",
+  "ToFull": [
+    {
+      "Email": "mailbox+hash@inbound.postmarkapp.com",
+      "Name": "Firstname Lastname"
+    }
+  ],
+  "Cc": "\"First Cc\" <firstcc@postmarkapp.com>, secondCc@postmarkapp.com",
+  "CcFull": [
+    {
+      "Email": "firstcc@postmarkapp.com",
+      "Name": "First Cc"
+    },
+    {
+      "Email": "secondCc@postmarkapp.com"
+    }
+  ],
+  "ReplyTo": "replyto@postmarkapp.com",
+  "Subject": "Test subject",
+  "MessageID": "73e6d360-66eb-11e1-8e72-a8904824019b",
+  "Date": "Mon, 5 Mar 2012 14:33:50 +0100",
+  "MailboxHash": "SampleHash",
+  "TextBody": "\u5b8c\u6210\u5de5\u4f5c\u4e8b\u9805\u4e00\r\n\u5b8c\u6210\u5de5\u4f5c\u4e8b\u9805\u4e8c\r\n\u5b8c\u6210\u5de5\u4f5c\u4e8b\u98053\r\nOK, there is nothing left now.\r\n \r\n\r\nOn Sun, Aug 25, 2013 at 6:04 PM, iDoneThis Today\r\n<today@today.idonethis.com>wrote:\r\n\r\n> **\r\n>\r\n>\r\n>       Hi there. Take *30 seconds* to write out what you got done today.\r\n> Just reply to this email or enter your dones on the web<https:\/\/idonethis.com\/calendar\/tzangms\/tzangms\/?token=X5nPn4yN6edgMSu9CLkSudxVrpcFpq#date\/2013-08-25>.\r\n>\r\n>     23 days ago\r\n>\r\n> This is what you got done the last time we heard from you. The day was\r\n> Friday, August 02.\r\n>\r\n>    -\r\n>    -\r\n>\r\n>      Here\u2019s a tip\r\n> Email today@idonethis.com any time you get something done and your\r\n> Personal calendar's list of dones will grow.\r\n>\r\n>   We kept a calendar <https:\/\/idonethis.com\/cal\/tzangms\/> for you.\r\n>    Need help? <https:\/\/idonethis.com\/help\/>   \u00a9 2013 iDoneThis<https:\/\/idonethis.com\/> Get reminder:\r\n> *Daily* \u00b7 Weekdays<http:\/\/idonethis.com\/subscription\/133033\/weekdays\/?token=9fhzumrqQEqdJ7hkBeHHZ2CJLVB5gN>\u00b7\r\n> Weekly<http:\/\/idonethis.com\/subscription\/133033\/weekly\/?token=7bn9n46eUV4x8Ud5S6Wsy3R7FP6fnT>\u00b7\r\n> Never<http:\/\/idonethis.com\/subscription\/133033\/unsubscribe\/?token=k8yAAZDFwqSjYGn9FpTdzBPdUVmSVE>\r\n>\r\n>\r\n",
+  "HtmlBody": "<html><body><p>This is a test html body.<\/p><\/body><\/html>",
+  "Tag": "TestTag",
+  "Headers": [
+    {
+      "Name": "X-Header-Test",
+      "Value": ""
+    }
+  ],
+  "Attachments": [
+    {
+      "Name": "test.txt",
+      "Content": "VGhpcyBpcyBhdHRhY2htZW50IGNvbnRlbnRzLCBiYXNlLTY0IGVuY29kZWQu",
+      "ContentType": "text/plain",
+      "ContentLength": 60
+    }
+  ]
+}

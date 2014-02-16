@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <script src="{{ STATIC_URL }}js/app.js"></script>
+    <script src="{{ STATIC_URL }}js/directives/edit-in-place.js"></script>
+    <script src="{{ STATIC_URL }}js/directives/focus.js"></script>
+    <script src="{{ STATIC_URL }}js/directives/enter.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container" ng-view></div>
+{% endblock %}

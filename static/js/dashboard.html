@@ -1,0 +1,58 @@
+<div class="row">
+
+    <div class="col-md-12">
+        <h1>
+            <small><a href="#/date/{{ prev_date | date:'yyyy-MM-dd' }}"><i class="glyphicon glyphicon-chevron-left"></i></a></small>
+            {{ the_date|date:"yyyy-MM-dd" }}
+            <small><a href="#/date/{{ next_date | date:'yyyy-MM-dd' }}"><i class="glyphicon glyphicon-chevron-right"></i></a></small>
+        </h1>
+
+        <hr />
+
+        <form id="item-form" role="form" ng-submit="submit()">
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" ng-model="text" placeholder="What'd you get done today?" />
+            </div>
+        </form>
+
+        <!-- other user block -->
+        <div class="row user" ng-repeat="user in users">
+            <div class="col-md-2 text-center">
+                <img class="img-circle" width="100" height="100" ng-src="{{ user.profile.get_mugshot_url }}" />
+                <h3>{{ user.username }}</h3>
+            </div>
+            <div class="col-md-10">
+                <ul>
+                    <li class="item" ng-class="{ has_like: item.likes.length > 0 }" ng-repeat="item in user.items"
+                            ng-mouseenter="show_action=true" ng-mouseleave="show_action=false">
+                        <div class="text">
+                            <span ng-switch="user.id == me.id">
+                                <span ng-switch-when="true">
+                                    <edit-in-place value="item"></edit-in-place>
+                                </span>
+                                <span ng-switch-when="false">
+                                    <span> {{ item.text }} </span>
+                                </span>
+                            </span>
+                            </span>
+                            <span class="actions" ng-show="show_action">
+                                <i ng-click="like(item)" class="glyphicon glyphicon-thumbs-up"></i>
+                                <i ng-click="showCommentInput(item)" class="glyphicon glyphicon-comment"></i>
+                                <i ng-if="user.id == me.id" ng-click="delete(item)" class="glyphicon glyphicon-minus-sign"></i>
+                            </span>
+                        </div>
+                        <div class="likes" ng-show="item.likes.length > 0">
+                            <span class="like" ng-repeat="like in item.likes">{{ like }} </span> likes this.
+                        </div>
+                        <div class="comments" ng-show="item.comments.length > 0">
+                            <div class="comment" ng-repeat="comment in item.comments">{{ comment.user.username }}: {{ comment.text }}</div>
+                        </div>
+                        <div class="comment_input" ng-show="item.isShowInputDialog">
+                            <input type="text" ng-model="commentInput[item.id]" ng-enter="submitComment(item);hideCommentInput(item);" ng-blur="hideCommentInput(item)" to-focus="item.isShowInputDialog" ui-keypress="{13:'submitComment()'}">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

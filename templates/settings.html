@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n bootstrap %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-horizontal" enctype="multipart/form-data" method="post" role="form">
+              {% csrf_token %}
+              <fieldset>
+                <legend>Settings</legend>
+                {{ form|bootstrap_horizontal }}
+                <input type="hidden" value="/dashboard/" />
+              </fieldset>
+              <div class="col-md-offset-2 col-md-10">
+                  <input class="btn btn-primary" type="submit" value="{% trans "Save changes" %}" />
+              </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

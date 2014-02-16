@@ -1,0 +1,4 @@
+*.swp
+*.pyc
+/data.db
+/static/bower_components/*

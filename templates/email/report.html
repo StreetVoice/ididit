@@ -1,0 +1,67 @@
+{% load app_tags %}
+<html>
+<body>
+    <table cellpadding="0" cellspacing="0" border="0" width="600">
+    <tbody>
+        <tr>
+            <td>
+
+            <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" style="border:1px solid #dfdfdf;margin-bottom:1em;background:#f2f2f2">
+                <tbody>
+                    <tr>
+                        <td style="padding:0 1.25em">
+                            <p style="font-size:1.666em;text-align:center;line-height:120%;color:#666666">
+                                Here’s what <a style="color:#1c5e9b;text-decoration:none;font-weight:bold" href="https://ididit.herokuapp.com/dashboard/" target="_blank">StreetVoice</a> has gotten <span class="il">done</span> recently.
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {% for user in users %}
+            {% items_by_date user=user date=the_date as items %}
+            <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" style="border-top:1px dotted #dddddd; padding:1em 0;margin:0 10px">
+                <tbody>
+                    <tr>
+                        <td width="600" style="vertical-align: top; padding: 0">
+                            <h2 style="margin:0;font-weight:normal;font-size:1.25em; background: #eee"></h2>
+                            <a style="padding:0;color:#1c5e9b;text-decoration:none;font-weight:bold" href="#">{{ user.profile.nickname }}</a>
+                            <table cellpadding="0" cellspacing="0" border="0" align="center" width="600">
+                                <tbody>
+                                    <tr>
+                                        <td style="margin:0;padding:1em 0 0 0;color:#cc0000">
+                                            {{ the_date }}
+                                            <ul style="margin:0 0 0 1.5em;padding:0;color:#666666;list-style-type:none">
+                                                {% for item in items %}
+                                                    <li style="margin:1em 0 0 0em;line-height:16px">
+                                                        {{ item.text }}
+                                                        {% with item.likes.all as likes %}
+                                                            {% if likes %}
+                                                            <br />
+                                                            <span style="font-size: 8pt">
+                                                            {% for like in likes %}
+                                                                {{ like.user.username }}
+                                                            {% endfor %}
+                                                            likes this.
+                                                            </span>
+                                                            {% endif %}
+                                                        {% endwith %}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            {% endfor %}
+
+            </td>
+        </td>
+    </tbody>
+    </table>
+</body>
+</html>
