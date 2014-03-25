@@ -4,23 +4,12 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ididit</title>
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/app.css">
     <script>
         document.write('<base href="' + document.location + '" />');
     </script>
-    <script src="//d3nslu0hdya83q.cloudfront.net/dist/1.0/raven.min.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/angular/angular.min.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/angular-route/angular-route.min.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/angular-cookies/angular-cookies.min.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/momentjs/moment.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/bootstrap/js/collapse.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/bootstrap/js/dropdown.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/bootstrap/js/button.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/bootstrap/js/alert.js"></script>
-    <script src="{{ STATIC_URL }}js/angular-django-rest-resource.js"></script>
-    {% block head %}{% endblock %}
+        {% block head %}{% endblock %}
 
 </head>
 <body>
@@ -61,5 +50,15 @@
 </nav>
 
     {% block content %}{% endblock %}
+
+    <script src="//d3nslu0hdya83q.cloudfront.net/dist/1.0/raven.min.js"></script>
+    <script src="{{ STATIC_URL }}bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="{{ STATIC_URL }}bower_components/angular/angular.min.js"></script>
+    <script src="{{ STATIC_URL }}bower_components/angular-route/angular-route.min.js"></script>
+    <script src="{{ STATIC_URL }}bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="{{ STATIC_URL }}bower_components/momentjs/moment.js"></script>
+    <script src="{{ STATIC_URL }}js/angular-django-rest-resource.js"></script>
+    {% block extra_js %}{% endblock %}
 </body>
 </html>
