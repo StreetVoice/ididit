@@ -1,6 +1,7 @@
+import json
+
 from django.contrib.auth.models import User, Group, Permission
 from django.http import HttpResponse
-from django.utils import simplejson
 
 from rest_framework import viewsets, routers
 
@@ -16,7 +17,7 @@ def me(request):
             'get_mugshot_url': request.user.profile.get_mugshot_url(),
         },
     }
-    return HttpResponse(simplejson.dumps(data))
+    return HttpResponse(json.dumps(data))
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
