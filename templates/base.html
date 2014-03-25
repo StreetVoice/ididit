@@ -1,15 +1,13 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML>{% load static %}
 <html ng-app="app">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ididit</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/app.css">
-    <script>
-        document.write('<base href="' + document.location + '" />');
-    </script>
-    {% block head %}{% endblock %}
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/app.css" %}" />
+    {% block extra_css %}{% endblock %}
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
 
@@ -22,9 +20,9 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
-    <script src="{{ STATIC_URL }}js/angular-route.min.js"></script>
-    <script src="{{ STATIC_URL }}js/angular-cookies.min.js"></script>
-    <script src="{{ STATIC_URL }}js/angular-django-rest-resource.js"></script>
+    <script src="{% static "js/angular-route.min.js" %}"></script>
+    <script src="{% static "js/angular-cookies.min.js" %}"></script>
+    <script src="{% static "js/angular-django-rest-resource.js" %}"></script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>
