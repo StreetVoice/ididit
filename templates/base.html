@@ -9,55 +9,21 @@
     <script>
         document.write('<base href="' + document.location + '" />');
     </script>
-        {% block head %}{% endblock %}
-
+    {% block head %}{% endblock %}
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">I Did It!</a>
-      </div>
 
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-            <li>
-                <a href="/dashboard/"><span class="glyphicon glyphicon-th-list"></span> Dashboard</a>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            {% if user.is_authenticated %}
-            <li>
-                <a href="/settings/"><span class="glyphicon glyphicon-wrench"></span> Settings</a>
-            </li>
-            <li>
-                <a href="/accounts/signout/"><span class="glyphicon glyphicon-user"></span> Sign out</a>
-            </li>
-            {% else %}
-            <li>
-                <a href="{% url "socialauth_begin" "google-oauth2" %}"><span class="glyphicon glyphicon-user"></span> Login with Google Account</a>
-            </li>
-            {% endif %}
-        </ul>
-      </div>
-    </div>
-</nav>
+    {% include "_nav.html" %}
 
     {% block content %}{% endblock %}
 
     <script src="//d3nslu0hdya83q.cloudfront.net/dist/1.0/raven.min.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/angular/angular.min.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/angular-route/angular-route.min.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/angular-cookies/angular-cookies.min.js"></script>
-    <script src="{{ STATIC_URL }}bower_components/momentjs/moment.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+    <script src="{{ STATIC_URL }}js/angular-route.min.js"></script>
+    <script src="{{ STATIC_URL }}js/angular-cookies.min.js"></script>
     <script src="{{ STATIC_URL }}js/angular-django-rest-resource.js"></script>
     {% block extra_js %}{% endblock %}
 </body>
