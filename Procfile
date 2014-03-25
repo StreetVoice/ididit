@@ -1,1 +1,1 @@
-web: python manage.py run_gunicorn 0.0.0.0:$PORT
+web: waitress-serve --port=$PORT ididit.wsgi:application

@@ -114,7 +114,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'raven.contrib.django.raven_compat',
-    'devserver',
     'rest_framework',
     'south',
     'userena',
@@ -122,7 +121,6 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'social_auth',
     'bootstrapform',
-    'gunicorn',
     'compressor',
     'app',
 )
