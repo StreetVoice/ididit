@@ -10,6 +10,27 @@ Installation
 -----------------
 
 
+Settings
+-----------------
+
+Required `heroku config`
+
+```
+GOOGLE_OAUTH2_CLIENT_ID
+GOOGLE_OAUTH2_CLIENT_SECRET
+GOOGLE_WHITE_LISTED_DOMAINS
+
+
+POSTMARK_INBOUND_EMAIL
+
+DEFAULT_FROM_EMAIL
+
+EMAIL_HOST
+EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD
+```
+
+
 ```
 $ heroku config:add SECRET_KEY=<your secret key>
 ```
