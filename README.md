@@ -15,8 +15,8 @@ Prepare
 2. Register a OAuth2 Client on [Google Developers Console](https://console.developers.google.com/project) to obtain key and secret
 
 
-Setup
-------------
+Setting up Application
+--------------------
 
 1. Clone `ididit` source code
 
@@ -54,3 +54,25 @@ Setup
 5. Setting up Postmark Sender Signature
 
 > Go to [https://postmarkapp.com/signatures](https://postmarkapp.com/signatures)
+
+Setting up Postmark
+---------------------
+
+Open Postmark settings page
+  
+```
+$ heroku addons:open postmark
+```
+
+1. Inbound Hook
+
+  Go to `Server` > `Settings` and look at `Inbound Hook` and enter following URL
+
+  ```
+  http://<your-domain>/inbound/
+  ```
+  
+2. Sender Signature
+
+  Go to `Sender Signature` and confirm your sender email address.
+  And your better setting up DKIM and SPF domain record that Postmark provided.
