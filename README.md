@@ -9,59 +9,42 @@ Simple idonethis clone with Django + Angular.js, used internally in [StreetVoice
 
 
 Prepare
+----------
+
+1. Get your [Heroku](http://heroku.com/) account
+2. Register a OAuth2 Client on [Google Developers Console](https://console.developers.google.com/project) to obtain key and secret
+
+
+Setup
 ------------
 
-1. [Heroku](http://heroku.com) Account
-1. Register a OAuth2 Client on [Google Developers Console](https://console.developers.google.com/project) to obtain key and secret
-2. Add `Postmark` on Heroku 
+1. Clone `ididit` source code
 
-```
-$ heroku addons:add postmark
-```
-
-and create a mail server in postmark
+> $ git clone https://github.com/StreetVoice/ididit.git
 
 
-Installation
------------------
+2. Create a `Heroku` app, and publish
+
+> $ heroku create <your-app-name>
+> $ git push heroku master
+
+3. Add `Postmark` on Heroku
+
+> $ heroku addons:add postmark
+
+4. Setting up heroku config
 
 
+```sh
+$ heroku config:add SECRET_KEY=<your secret key> # random string
 
+# google apps
+$ heroku config:add GOOGLE_OAUTH2_CLIENT_ID=<your client id>
+$ heroku config:add GOOGLE_OAUTH2_CLIENT_SECRET=<your client secret>
 
-Settings
------------------
-
-Required `heroku config`
-
-```
-# django
-SECRET_KEY
-
-# email
-DEFAULT_FROM_EMAIL
-EMAIL_HOST
-EMAIL_HOST_USER
-EMAIL_HOST_PASSWORD
-
-# ididit uses Google Apps account for login,and white list domain for restriction
-GOOGLE_OAUTH2_CLIENT_ID
-GOOGLE_OAUTH2_CLIENT_SECRET
-GOOGLE_WHITE_LISTED_DOMAINS
-
-# ididit uses Postmark for receving inboud email
-POSTMARK_INBOUND_EMAIL
+$ heroku config:add GOOGLE_WHITE_LISTED_DOMAINS=<restrct login google apps domain>
 ```
 
+5. Setting up Postmark Sender Signature
 
-```
-$ heroku config:add SECRET_KEY=<your secret key>
-```
-
-How to generate SECRET_KEY? you could try this.
-
-```
-from django.utils.crypto import get_random_string
-
-chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
-get_random_string(50, chars)
-```
+> Go to [https://postmarkapp.com/signatures](https://postmarkapp.com/signatures)
