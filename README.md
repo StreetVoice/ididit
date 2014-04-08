@@ -76,3 +76,28 @@ $ heroku addons:open postmark
 
   Go to `Sender Signature` and confirm your sender email address.
   And your better setting up DKIM and SPF domain record that Postmark provided.
+
+
+Development
+==================
+
+`ididit` uses Python, [Django](https://www.djangoproject.com/) for Backend REST API and [Angular.js](http://angularjs.org/) for frontend.
+
+
+Settings up django
+-------------------
+
+Use `virtualenv` and `virtualenvwrapper` for development is recommended. If you are python developer, you should already install both of this. 
+
+OK, Let's assume you are python developer, and both `virtualenv` and `virtualenvwrapper` are installed, you can just follow these steps to get started to development.
+
+First of all, fork this repo.
+
+```
+$ mkproject ididit
+$ git clone <your-ididit-git-repo>
+$ pip install -r requirements.txt
+$ ./manage.py runserver
+```
+
+You are good to go!
